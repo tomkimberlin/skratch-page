@@ -35,8 +35,11 @@ $Pages = $Dashboard->getPages();
       <?php endif; ?>
     </div>
     <div class="row">
-      <h2>Role</h2>
-      <p><?php echo $_SESSION['role'] ?></p>
+    <h2>Role</h2>
+    <p><?php echo $_SESSION['role'] ?></p>
+    <?php if ($_SESSION['role'] === 'vip') : ?>
+    <p>You are <b>very important</b>. Thank you for your support.</p>
+    <?php endif; ?>
     <?php if ($_SESSION['role'] === 'admin') : ?>
     <h2>Recently created users</h2>
     <?php $Users = $Dashboard->getRecentUsers(); ?>
