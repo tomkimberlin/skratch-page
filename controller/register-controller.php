@@ -67,6 +67,7 @@ class Register extends Controller
 
     $_SESSION['data'] = $Data;
     $_SESSION['auth_status'] = true;
+    $_SESSION['id'] = $Data['id'];
     header("Location: dashboard.php");
     return true;
   }

@@ -31,8 +31,7 @@ class DashboardModel extends db
   }
 
   public function fetchPages(): array {
-    $id = $_SESSION['id'];
-    $this->query("SELECT * FROM `pages` WHERE `user_id` = $id");
+    $this->query("SELECT * FROM `pages` WHERE `user_id` = " . $_SESSION['id']);
     $this->execute();
     $Pages = $this->fetchAll();
 
