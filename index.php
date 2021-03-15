@@ -12,7 +12,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
       <div class="col-xs-12 col-sm-12 col-md-12 col-xl-4 col-lg-4 center-align center-block">
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
           <div class="alert alert-danger" role="alert">
-            <span><B>Oops!</B> Invalid Credentials Used.</span>
+            <span>Invalid credentials. Please try again.</span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true" class="text-danger">&times;</span>
             </button>

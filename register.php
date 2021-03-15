@@ -13,7 +13,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
           <br>
           <div class="alert alert-danger" role="alert">
-            <span><B>Oops!</B> There are errors in your form.</span>
+            <span>Unable to register an account with the credentials you entered. Please try again.</span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true" class="text-danger">&times;</span>
             </button>
