@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <?php if (!isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="<?php echo BASE_URL; ?>index.php">Login</a>
-              <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="<?php echo BASE_URL; ?>register.php">Register</a>
+              <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="index.php">Login</a>
+              <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="register.php">Register</a>
             <?php elseif (isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="<?php echo BASE_URL; ?>dashboard.php">Dashboard</a>
+              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="dashboard.php">Dashboard</a>
             <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link" href="<?php echo BASE_URL; ?>logout.php">Logout</a>
+              <a class="nav-link" href="logout.php">Logout</a>
             <?php endif; ?>
           </div>
         </div>
