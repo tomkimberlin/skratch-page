@@ -4,11 +4,6 @@ require_once('db.php');
 class RegisterModel extends db
 {
 
-  /**
-   * @param array
-   * @return array
-   * @desc Creates and returns a user record....
-   **/
   public function createUser(array $user): array
   {
     $this->query("INSERT INTO `users` (email, password) VALUES (:email, :password)");
@@ -28,11 +23,6 @@ class RegisterModel extends db
     }
   }
 
-  /**
-   * @param string
-   * @return array
-   * @desc Returns a user record based on the method parameter....
-   **/
   public function fetchUser(string $email): array
   {
     $this->query("SELECT * FROM `users` WHERE `email` = :email");

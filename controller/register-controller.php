@@ -11,22 +11,12 @@ class Register extends Controller
   public $active = 'Register'; // For highlighting the active link
   private $registerModel;
 
-  /**
-   * @param null|void
-   * @return null|void
-   * @desc Checks if the user session is set and creates a new instance of the RegisterModel...
-   **/
   public function __construct()
   {
     if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
     $this->registerModel = new RegisterModel();
   }
 
-  /**
-   * @param array
-   * @return array|boolean
-   * @desc Verifies, Creates, and returns a user by calling the register method on the RegisterModel...
-   **/
   public function register(array $data)
   {
     $email = stripcslashes(strip_tags($data['email']));

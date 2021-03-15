@@ -14,32 +14,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
         <a class="navbar-brand" href="index.php">Skratch Page</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
             <?php if (!isset($_SESSION['auth_status'])) : ?>
-              <li class="nav-item">
-                <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="<?php echo BASE_URL; ?>index.php">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="<?php echo BASE_URL; ?>register.php" tabindex="-1" aria-disabled="true">Register</a>
-              </li>
+              <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="<?php echo BASE_URL; ?>index.php">Login</a>
+              <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="<?php echo BASE_URL; ?>register.php">Register</a>
             <?php elseif (isset($_SESSION['auth_status'])) : ?>
-              <li class="nav-item">
-                <a href="<?php echo BASE_URL; ?>dashboard.php" class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>">Dashboard</a>
-              </li>
+              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="<?php echo BASE_URL; ?>dashboard.php">Dashboard</a>
             <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo BASE_URL; ?>logout.php">Logout</a>
-              </li>
+              <a class="nav-link" href="<?php echo BASE_URL; ?>logout.php">Logout</a>
             <?php endif; ?>
-          </ul>
+          </div>
         </div>
       </div>
     </nav>
