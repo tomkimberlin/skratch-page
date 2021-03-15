@@ -58,6 +58,19 @@ class Register extends Controller
     $_SESSION['data'] = $Data;
     $_SESSION['auth_status'] = true;
     $_SESSION['id'] = $Data['id'];
+
+    if ($Data['role'] === '1') {
+      $_SESSION['role'] = 'admin';
+    }
+
+    if ($Data['role'] === '2') {
+      $_SESSION['role'] = 'user';
+    }
+
+    if ($Data['role'] === '3') {
+      $_SESSION['role'] = 'vip';
+    }
+
     header("Location: dashboard.php");
     return true;
   }

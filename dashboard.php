@@ -16,11 +16,10 @@ $Pages = $Dashboard->getPages();
     </div>
     <div class="row">
       <div class="container py-2">
-        <a href="new.php">New page</a>
+        <a href="page.php">New page</a>
       </div>
     </div>
     <div class="row">
-
       <?php if ($Pages['status']) : ?>
         <?php foreach ($Pages['data'] as $row) : ?>
           <div class="col-xs-12 col-sm-12 col-md-12 col-xl-4 col-lg-4">
@@ -28,13 +27,23 @@ $Pages = $Dashboard->getPages();
               <div>
                 <p><?php echo $row['content']; ?></p>
                 <p>Updated: <?php echo $row['last_updated']; ?></p>
-                <p><a href="pages/<?php echo $row['id']; ?>">View page</a></p>
+                <p><a href="page.php">View page</a></p>
               </div>
             </div>
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
-
+    </div>
+    <div class="row">
+      <h2>Role</h2>
+      <p><?php echo $_SESSION['role'] ?></p>
+    <?php if ($_SESSION['role'] === 'admin') : ?>
+    <h2>Recently created users</h2>
+    <?php $Users = $Dashboard->getRecentUsers(); ?>
+    <?php foreach ($Users['data'] as $row) : ?>
+      <p><?php echo $row['email']; ?></p>
+      <?php endforeach; ?>
+    <?php endif; ?>
     </div>
   </div>
 </main>

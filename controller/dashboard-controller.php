@@ -21,8 +21,8 @@ class Dashboard extends Controller
     return $this->dashboardModel->fetchPages();
   }
 
-  public function getUser(): array {
-    return $this->dashboardModel->fetchUser();
+  public function getRecentUsers(): array {
+    return $this->dashboardModel->fetchRecentUsers();
   }
 
 }
