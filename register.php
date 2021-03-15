@@ -14,9 +14,6 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
           <br>
           <div class="alert alert-danger" role="alert">
             <span>Unable to register an account with the credentials you entered. Please try again.</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true" class="text-danger">&times;</span>
-            </button>
           </div>
         <?php endif; ?>
         <div class="card shadow-lg p-3 mb-5 bg-white rounded">
