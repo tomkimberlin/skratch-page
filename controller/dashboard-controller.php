@@ -13,7 +13,7 @@ class Dashboard extends Controller
 
   public function __construct()
   {
-    if (!isset($_SESSION['auth_status'])) header("Location: index.php");
+    if (!isset($_SESSION['auth_status'])) header("Location: login.php");
     $this->dashboardModel = new DashboardModel();
   }
 
