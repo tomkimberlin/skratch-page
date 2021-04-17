@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       <div class="container py-2">
-        <a href="index.php">Return to Dashboard</a>
+        <a href="dashboard.php">Return to Dashboard</a>
       </div>
     </div>
   </div>

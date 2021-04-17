@@ -26,7 +26,7 @@
               <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="index.php">Login</a>
               <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="register.php">Register</a>
             <?php elseif (isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="index.php">Dashboard</a>
+              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="dashboard.php">Dashboard</a>
             <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
               <a class="nav-link" href="logout.php">Logout</a>

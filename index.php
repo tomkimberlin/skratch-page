@@ -1,52 +1,41 @@
-<?php require_once('controller/dashboard-controller.php'); ?>
+<?php require_once('controller/login-controller.php'); ?>
 <?php
-$Dashboard = new Dashboard();
+$Login = new Login();
 $Response = [];
-$active = $Dashboard->active;
-$Pages = $Dashboard->getPages();
+$active = $Login->active;
+if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
 ?>
-<?php require('./nav.php'); ?>
+<?php require('nav.php'); ?>
 <main role="main" class="container">
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
-        <h1>Pages</h1>
-        <hr>
-      </div>
-    </div>
-    <div class="row">
-      <div class="container py-2">
-        <a href="page.php">New page (not working yet)</a>
-      </div>
-    </div>
-    <div class="row">
-      <?php if ($Pages['status']) : ?>
-        <?php foreach ($Pages['data'] as $row) : ?>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-xl-4 col-lg-4">
-            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-              <div>
-                <p><?php echo $row['content']; ?></p>
-                <p>Updated: <?php echo $row['last_updated']; ?></p>
-                <p><a href="page.php">View page</a></p>
+    <div class="row justify-content-center mt-5">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-xl-4 col-lg-4 center-align center-block">
+        <?php if (isset($Response['status']) && !$Response['status']) : ?>
+          <div class="alert alert-danger" role="alert">
+            <span>Invalid credentials. Please try again.</span>
+          </div>
+        <?php endif; ?>
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+          <h1 class="text-center">Login</h1>
+          <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-4">
+              <div class="form-group">
+                <label for="inputEmail" class="sr-only">Email</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
               </div>
             </div>
-          </div>
-        <?php endforeach; ?>
-      <?php endif; ?>
-    </div>
-    <div class="row">
-    <h2>Role</h2>
-    <p><?php echo $_SESSION['role'] ?></p>
-    <?php if ($_SESSION['role'] === 'vip') : ?>
-    <p>You are <b>very important</b>. Thank you for your support.</p>
-    <?php endif; ?>
-    <?php if ($_SESSION['role'] === 'admin') : ?>
-    <h2>Recently created users</h2>
-    <?php $Users = $Dashboard->getRecentUsers(); ?>
-    <?php foreach ($Users['data'] as $row) : ?>
-      <p><?php echo $row['email']; ?></p>
-      <?php endforeach; ?>
-    <?php endif; ?>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12">
+              <div class="form-group mt-2">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 mt-2 d-flex justify-content-center">
+              <button class="btn btn-md btn-primary btn-block" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </main>

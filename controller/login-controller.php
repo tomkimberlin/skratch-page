@@ -13,8 +13,8 @@ class Login extends Controller
 
   public function __construct()
   {
-    // If logged in, set the header to index.php
-    if (isset($_SESSION['auth_status'])) header("Location: index.php");
+    // If logged in, set the header to dashboard.php
+    if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
     // And create new LoginModel
     $this->loginModel = new LoginModel();
   }
@@ -49,7 +49,7 @@ class Login extends Controller
           $_SESSION['role'] = 'vip';
         }
 
-        header("Location: index.php");
+        header("Location: dashboard.php");
       }
 
       $Response = array(

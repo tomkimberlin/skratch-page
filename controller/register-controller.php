@@ -13,7 +13,7 @@ class Register extends Controller
 
   public function __construct()
   {
-    if (isset($_SESSION['auth_status'])) header("Location: index.php");
+    if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
     $this->registerModel = new RegisterModel();
   }
 
@@ -71,7 +71,7 @@ class Register extends Controller
       $_SESSION['role'] = 'vip';
     }
 
-    header("Location: index.php");
+    header("Location: dashboard.php");
     return true;
   }
 }
