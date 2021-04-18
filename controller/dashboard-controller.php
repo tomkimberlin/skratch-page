@@ -1,7 +1,5 @@
 <?php
 
-// Extends controller.php and loads dependencies from dashboard-model.php
-
 require_once('controller.php');
 require_once('./model/dashboard-model.php');
 

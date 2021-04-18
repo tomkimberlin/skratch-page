@@ -1,7 +1,5 @@
 <?php
 
-// Extends controller.php
-
 require_once('controller.php');
 
 class Logout extends Controller

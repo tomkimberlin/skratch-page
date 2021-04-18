@@ -1,7 +1,5 @@
 <?php
 
-// Extends controller.php and loads dependencies from login-model.php
-
 require_once('controller.php');
 require_once('./model/login-model.php');
 

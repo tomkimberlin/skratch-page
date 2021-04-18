@@ -1,7 +1,5 @@
 <?php
 
-// Extends controller.php and loads dependencies from register-model.php
-
 require_once('controller.php');
 require_once('./model/register-model.php');
 
@@ -23,40 +21,50 @@ class Register extends Controller
     $email = stripcslashes(strip_tags($data['email']));
     $password = stripcslashes(strip_tags($data['password']));
 
-    $EmailStatus = $this->registerModel->fetchUser($email)['status'];
-
+    // Create array for storing error information
     $Error = array(
       'email' => '',
       'password' => '',
       'id' => ''
     );
 
+    // Query database for user inputted email
+    $EmailStatus = $this->registerModel->fetchUser($email)['status'];
+
+    // Return error if email address already exists in database
     if (!empty($EmailStatus)) {
       $Error['email'] = 'Email address already in use.';
       return $Error;
     }
 
+    // Return error if password is shorter than 7 characters
     if (strlen($password) < 7) {
       $Error['password'] = 'Password must be at at least 8 characters.';
       return $Error;
     }
 
+    // Create payload to pass to registerModel
     $Payload = array(
       'email' => $email,
       'password' => password_hash($password, PASSWORD_BCRYPT)
     );
 
+    // Create the user and store the response
     $Response = $this->registerModel->createUser($Payload);
 
+    // Fetch the newly created user
     $Data = $this->registerModel->fetchUser($email)['data'];
 
+    // Destroy password
     unset($Data['password']);
 
+    // Return error message if creating user is unsuccessful
     if (!$Response['status']) {
       $Response['status'] = 'Sorry, an unexpected error occurred and your request could not be completed.';
       return $Response;
     }
 
+    // Session variables
     $_SESSION['data'] = $Data;
     $_SESSION['auth_status'] = true;
     $_SESSION['id'] = $Data['id'];
@@ -74,6 +82,7 @@ class Register extends Controller
       $_SESSION['role'] = 'vip';
     }
 
+    // Finally, send user to dashboard.php
     header("Location: dashboard.php");
     return $Response;
   }

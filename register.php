@@ -13,7 +13,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
     </div>
   <?php endif; ?>
   <h1>Register</h1>
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin">
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <div class="mb-3">
       <label for="inputEmail" class="form-label">Email</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">

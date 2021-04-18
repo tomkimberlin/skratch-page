@@ -14,7 +14,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
         <span>Invalid credentials. Please try again.</span>
       </div>
     <?php endif; ?>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <div class="mb-3">
         <label for="inputEmail" class="form-label">Email</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
