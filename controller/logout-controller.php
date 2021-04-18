@@ -13,5 +13,3 @@ class Logout extends Controller
     header("Location: index.php");
   }
 }
-
-?>

@@ -14,13 +14,12 @@ class RegisterModel extends db
       $Response = array(
         'status' => true,
       );
-      return $Response;
     } else {
       $Response = array(
         'status' => false
       );
-      return $Response;
     }
+    return $Response;
   }
 
   public function fetchUser(string $email): array
@@ -31,11 +30,10 @@ class RegisterModel extends db
 
     $User = $this->fetch();
     if (!empty($User)) {
-      $Response = array(
+      return array(
         'status' => true,
         'data' => $User
       );
-      return $Response;
     }
     return array(
       'status' => false,
@@ -43,5 +41,3 @@ class RegisterModel extends db
     );
   }
 }
-
-?>

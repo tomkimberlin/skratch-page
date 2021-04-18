@@ -6,7 +6,9 @@
     <meta name="application-name" content="Skratch.Page">
     <meta name="author" content="Tom Kimberlin">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skratch.Page | <?php echo ucfirst($active); ?></title>
+    <title>Skratch.Page | <?php if (!empty($active)) {
+        echo ucfirst($active);
+      } ?></title>
     <!-- Css Styles... -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- Script -->
@@ -14,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">Skratch.Page</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,12 +24,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <?php if (!isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link <?php if (strtolower($active) === 'login') echo 'active'; ?>" href="index.php">Login</a>
-              <a class="nav-link <?php if (strtolower($active) === 'register') echo 'active'; ?>" href="register.php">Register</a>
-            <?php elseif (isset($_SESSION['auth_status'])) : ?>
-              <a class="nav-link <?php if (strtolower($active) === 'dashboard') echo 'active'; ?>" href="dashboard.php">Dashboard</a>
-            <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
               <a class="nav-link" href="logout.php">Logout</a>
             <?php endif; ?>

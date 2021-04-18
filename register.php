@@ -6,8 +6,7 @@ $active = $Register->active;
 if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
 ?>
 <?php require('./nav.php'); ?>
-<main role="main" class="container">
-  <div class="container">
+<main role="main" class="container p-5">
     <div class="row justify-content-center mt-5">
       <div class="col-xs-12 col-sm-12 col-md-12 col-xl-4 col-lg-4 center-align center-block">
         <?php if (isset($Response['status']) && !$Response['status']) : ?>
@@ -44,7 +43,6 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
         </div>
       </div>
     </div>
-  </div>
 </main>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-// Begins the skratch.page session
+// Begins the Skratch.page session
 
 session_start();
 
@@ -8,5 +8,3 @@ class Controller
 {
 
 }
-
-?>

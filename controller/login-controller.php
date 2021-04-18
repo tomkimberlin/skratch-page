@@ -8,8 +8,8 @@ require_once('./model/login-model.php');
 class Login extends Controller
 {
 
-  public $active = 'login'; // For highlighting the active link
-  private $loginModel;
+  public string $active = 'login'; // For highlighting the active link
+  private LoginModel $loginModel;
 
   public function __construct()
   {
@@ -29,13 +29,10 @@ class Login extends Controller
     if (!$EmailRecords['status']) {
       if (password_verify($password, $EmailRecords['data']['password'])) {
 
-        $Response = array(
-          'status' => true
-        );
-
         $_SESSION['data'] = $EmailRecords['data'];
         $_SESSION['auth_status'] = true;
         $_SESSION['id'] = $EmailRecords['data']['id'];
+        $_SESSION['email'] = $EmailRecords['data']['email'];
 
         if ($EmailRecords['data']['role'] === '1') {
           $_SESSION['role'] = 'admin';
@@ -51,19 +48,6 @@ class Login extends Controller
 
         header("Location: dashboard.php");
       }
-
-      $Response = array(
-        'status' => false,
-      );
-      return $Response;
     }
-
-    $Response = array(
-      'status' => false,
-    );
-
-    return $Response;
   }
 }
-
-?>

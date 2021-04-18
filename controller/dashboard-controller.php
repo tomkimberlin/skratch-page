@@ -8,23 +8,30 @@ require_once('./model/dashboard-model.php');
 class Dashboard extends Controller
 {
 
-  public $active = 'dashboard'; // For highlighting the active link
-  private $dashboardModel;
+  public string $active = 'dashboard'; // For highlighting the active link
+  private DashboardModel $dashboardModel;
 
   public function __construct()
   {
-    if (!isset($_SESSION['auth_status'])) header("Location: index.php");
-    $this->dashboardModel = new DashboardModel();
+    // When a new Dashboard object is created, check if the user is
+    // logged in and if not redirect them to login.php
+    if (!isset($_SESSION['auth_status'])) {
+      header("Location: login.php");
+    } else {
+      // User is logged in so create DashboardModel object
+      $this->dashboardModel = new DashboardModel();
+    }
   }
 
-  public function getPages(): array {
+  // Fetches
+  public function getPages(): array
+  {
     return $this->dashboardModel->fetchPages();
   }
 
-  public function getRecentUsers(): array {
+  public function getRecentUsers(): array
+  {
     return $this->dashboardModel->fetchRecentUsers();
   }
 
 }
-
-?>

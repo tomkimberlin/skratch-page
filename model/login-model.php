@@ -11,24 +11,17 @@ class LoginModel extends db
     $this->execute();
 
     $Email = $this->fetch();
+
     if (empty($Email)) {
-      $Response = array(
+      return array(
         'status' => true,
         'data' => $Email
       );
-
-      return $Response;
-    }
-
-    if (!empty($Email)) {
-      $Response = array(
+    } else {
+      return array(
         'status' => false,
         'data' => $Email
       );
-
-      return $Response;
     }
   }
 }
-
-?>

@@ -8,11 +8,12 @@ require_once('./model/register-model.php');
 class Register extends Controller
 {
 
-  public $active = 'Register'; // For highlighting the active link
-  private $registerModel;
+  public string $active = 'Register'; // For highlighting the active link
+  private RegisterModel $registerModel;
 
   public function __construct()
   {
+    // Check if user is logged in and redirect them to dashboard.php if they are
     if (isset($_SESSION['auth_status'])) header("Location: dashboard.php");
     $this->registerModel = new RegisterModel();
   }
@@ -48,7 +49,8 @@ class Register extends Controller
     $Response = $this->registerModel->createUser($Payload);
 
     $Data = $this->registerModel->fetchUser($email)['data'];
-    unset($Data['password']); // Stop storing sensitive information after it is no longer needed
+
+    unset($Data['password']);
 
     if (!$Response['status']) {
       $Response['status'] = 'Sorry, an unexpected error occurred and your request could not be completed.';
@@ -58,6 +60,7 @@ class Register extends Controller
     $_SESSION['data'] = $Data;
     $_SESSION['auth_status'] = true;
     $_SESSION['id'] = $Data['id'];
+    $_SESSION['email'] = $Data['email'];
 
     if ($Data['role'] === '1') {
       $_SESSION['role'] = 'admin';
@@ -75,5 +78,3 @@ class Register extends Controller
     return true;
   }
 }
-
-?>
