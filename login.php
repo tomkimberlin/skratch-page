@@ -24,7 +24,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       </div>
       <div class="d-flex justify-content-center">
-        <button class="btn btn-primary" type="submit">Login</button>
+        <button class="btn btn-secondary" type="submit">Login</button>
       </div>
     </form>
 </main>

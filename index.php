@@ -9,7 +9,7 @@ $active = $Index->active;
   <p class="lead text-secondary">A simple web-based notepad.</p>
   <section>
     <?php if (!isset($_SESSION['auth_status'])) : ?>
-    <p><a href="login.php">Login</a> or <a href="register.php">register</a> to get started.</p>
+    <p class="text-secondary"><a class="link-secondary" href="login.php">Login</a> or <a class="link-secondary" href="register.php">register</a> to get started.</p>
     <?php endif; ?>
     <?php if (isset($_SESSION['auth_status'])) : ?>
       <p><a class="btn btn-secondary" href="dashboard.php">Dashboard</a></p>
