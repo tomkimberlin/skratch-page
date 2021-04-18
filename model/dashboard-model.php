@@ -6,7 +6,7 @@ class DashboardModel extends db
 
   public function fetchPages(): array
   {
-    $this->query("SELECT * FROM `pages` WHERE `user_id` = " . $_SESSION['id']);
+    $this->query("SELECT * FROM `pages` WHERE `user_id` = " . $_SESSION['id'] . " ORDER BY `last_updated` DESC");
     $this->execute();
     $Pages = $this->fetchAll();
 

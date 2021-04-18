@@ -17,7 +17,7 @@ $Pages = $Dashboard->getPages();
         <div class="col-md">
           <div class="border rounded mb-3 p-3">
             <p><?php echo $row['content']; ?></p>
-            <p>Updated: <?php echo $row['last_updated']; ?></p>
+            <p class="text-secondary">Created: <?php echo $row['last_updated']; ?></p>
             <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
           </div>
         </div>
