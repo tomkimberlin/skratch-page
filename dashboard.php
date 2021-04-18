@@ -9,15 +9,13 @@ $Pages = $Dashboard->getPages();
 <main role="main" class="container p-5">
   <h1>Dashboard</h1>
   <p class="lead text-secondary">Logged in as: <?php echo $_SESSION['email']; ?></p>
+  <a class="btn btn-secondary mb-3" href="new-page.php">New page</a>
   <section class="row">
-    <h2>Pages</h2>
-    <div class="container my-2">
-      <a class="btn btn-secondary" href="new-page.php">New page</a>
-    </div>
+    <h2 class="mb-3">Pages</h2>
     <?php if ($Pages['status']) : ?>
       <?php foreach ($Pages['data'] as $row) : ?>
         <div class="col-md">
-          <div class="border rounded mb-2 p-3">
+          <div class="border rounded mb-3 p-3">
             <p><?php echo $row['content']; ?></p>
             <p>Updated: <?php echo $row['last_updated']; ?></p>
             <p class="mb-0"><a class="btn btn-secondary" href="view-page.php">View page</a></p>

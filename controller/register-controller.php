@@ -75,6 +75,6 @@ class Register extends Controller
     }
 
     header("Location: dashboard.php");
-    return true;
+    return $Response;
   }
 }

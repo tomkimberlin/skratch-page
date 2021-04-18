@@ -19,7 +19,7 @@ class Login extends Controller
     $this->loginModel = new LoginModel();
   }
 
-  public function login(array $data)
+  public function login(array $data): array
   {
     $email = stripcslashes(strip_tags($data['email']));
     $password = stripcslashes(strip_tags($data['password']));
@@ -49,5 +49,8 @@ class Login extends Controller
         header("Location: dashboard.php");
       }
     }
+    return array(
+      'status' => false
+    );
   }
 }
