@@ -7,7 +7,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
 ?>
 <?php require('nav.php'); ?>
 <main class="container p-5">
-  <h1 class="text-center">Login</h1>
+  <h1>Login</h1>
   <div class="d-flex flex-column">
     <?php if (isset($Response['status']) && !$Response['status']) : ?>
       <div class="alert alert-danger" role="alert">
@@ -23,7 +23,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
         <label for="inputPassword" class="form-label">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       </div>
-      <div class="d-flex justify-content-center">
+      <div>
         <button class="btn btn-secondary" type="submit">Login</button>
       </div>
     </form>

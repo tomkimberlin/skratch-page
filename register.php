@@ -12,7 +12,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
       <span>Unable to register an account with the credentials you entered. Please try again.</span>
     </div>
   <?php endif; ?>
-  <h1 class="text-center">Register</h1>
+  <h1>Register</h1>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-signin">
     <div class="mb-3">
       <label for="inputEmail" class="form-label">Email</label>
@@ -28,7 +28,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
         <small class="text-danger"><?php echo $Response['password']; ?></small>
       <?php endif; ?>
     </div>
-    <div class="d-flex justify-content-center">
+    <div>
       <button class="btn btn-secondary" type="submit">Register</button>
     </div>
   </form>

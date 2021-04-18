@@ -7,7 +7,7 @@ $active = $ViewPage->active;
 <main role="main" class="container p-5">
   <h1>View Page</h1>
   <p>Soon your page will appear here.</p>
-  <a class="btn btn-secondary" href="dashboard.php">Return to Dashboard</a>
+  <a class="link-secondary" href="dashboard.php">Return to Dashboard</a>
 </main>
 </body>
 </html>
