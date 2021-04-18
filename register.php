@@ -6,7 +6,7 @@ $active = $Register->active;
 if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
 ?>
 <?php require('./nav.php'); ?>
-<main class="container p-5">
+<main class="container py-3">
   <?php if (isset($Response['status']) && !$Response['status']) : ?>
     <div class="alert alert-danger" role="alert">
       <span>Unable to register an account with the credentials you entered. Please try again.</span>

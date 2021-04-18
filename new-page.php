@@ -6,7 +6,7 @@ $active = $NewPage->active;
 if (isset($_POST) && count($_POST) > 0) $Response = $NewPage->createPage($_POST);
 ?>
 <?php require('./nav.php'); ?>
-<main role="main" class="container p-5">
+<main class="container py-3">
   <h1>New Page</h1>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <div class="mb-3">

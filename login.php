@@ -6,7 +6,7 @@ $active = $Login->active;
 if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
 ?>
 <?php require('nav.php'); ?>
-<main class="container p-5">
+<main class="container py-3">
   <h1>Login</h1>
   <div class="d-flex flex-column">
     <?php if (isset($Response['status']) && !$Response['status']) : ?>

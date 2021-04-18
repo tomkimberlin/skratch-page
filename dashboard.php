@@ -6,7 +6,7 @@ $active = $Dashboard->active;
 $Pages = $Dashboard->getPages();
 ?>
 <?php require('./nav.php'); ?>
-<main role="main" class="container p-5">
+<main role="main" class="container py-3">
   <h1>Dashboard</h1>
   <p class="lead text-secondary">Logged in as: <?php echo $_SESSION['email']; ?></p>
   <p><a class="link-secondary" href="new-page.php">New page</a></p>

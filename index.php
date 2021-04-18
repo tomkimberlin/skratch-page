@@ -4,7 +4,7 @@ $Index = new Index();
 $active = $Index->active;
 ?>
 <?php require('nav.php'); ?>
-<main class="container p-5">
+<main class="container py-3">
   <h1>Skratch.Page</h1>
   <p class="lead text-secondary">A simple web-based notepad.</p>
   <section>
