@@ -6,7 +6,7 @@ $active = $Dashboard->active;
 $Pages = $Dashboard->getPages();
 ?>
 <?php require('./nav.php'); ?>
-<main role="main" class="container py-3">
+<main class="container py-3">
   <h1>Dashboard</h1>
   <p class="lead text-secondary">Logged in as: <?php echo $_SESSION['email']; ?></p>
   <p><a class="link-secondary" href="new-page.php">New page</a></p>
@@ -18,7 +18,7 @@ $Pages = $Dashboard->getPages();
           <div class="border rounded mb-3 p-3">
             <p><?php echo $row['content']; ?></p>
             <p>Updated: <?php echo $row['last_updated']; ?></p>
-            <p class="mb-0"><a class="link-secondary" href="view-page.php">View page</a></p>
+            <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
           </div>
         </div>
       <?php endforeach; ?>

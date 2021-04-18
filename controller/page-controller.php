@@ -1,11 +1,13 @@
 <?php
 
 require_once('controller.php');
+require_once('./model/page-model.php');
 
-class ViewPage extends Controller
+class Page extends Controller
 {
 
   public string $active = 'view page'; // For highlighting the active link
+  private PageModel $pageModel;
 
   public function __construct()
   {
@@ -13,7 +15,12 @@ class ViewPage extends Controller
       header("Location: login.php");
     } else {
       // User is logged in so create ViewPageModel object
-      //$this->viewPageModel = new ViewPageModel();
+      $this->pageModel = new PageModel();
     }
+  }
+
+  public function getPage()
+  {
+    return $this->pageModel->fetchPage();
   }
 }
