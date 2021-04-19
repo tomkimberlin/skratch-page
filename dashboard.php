@@ -15,10 +15,15 @@ $Pages = $Dashboard->getPages();
     <?php if ($Pages['status']) : ?>
       <?php foreach ($Pages['data'] as $row) : ?>
         <div class="col-md">
-          <div class="border rounded mb-3 p-3">
-            <p><?php echo $row['content']; ?></p>
-            <p class="text-secondary">Created: <?php echo $row['last_updated']; ?></p>
-            <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
+          <div class="border rounded mb-3">
+            <div class="bg-dark p-1">
+              <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
+            </div>
+            <div class="p-1">
+              <p><?php echo $row['content']; ?></p>
+              <p class="text-secondary">Saved: <?php echo $row['saved_at']; ?></p>
+              <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
+            </div>
           </div>
         </div>
       <?php endforeach; ?>

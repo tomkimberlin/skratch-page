@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
           <?php foreach ($ViewPage['data'] as $row) : ?>
             <div class="border rounded mb-3 p-3">
               <p><?php echo $row['content']; ?></p>
-              <p class="text-secondary mb-0">Created: <?php echo $row['last_updated']; ?></p>
+              <p class="text-secondary mb-0">Saved: <?php echo $row['saved_at']; ?></p>
             </div>
           <?php endforeach; ?>
         <?php endif;
