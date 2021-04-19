@@ -20,8 +20,8 @@ $Pages = $Dashboard->getPages();
               <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
             </div>
             <div class="p-1">
-              <p><?php echo $row['content']; ?></p>
-              <p class="text-secondary">Saved: <?php echo $row['saved_at']; ?></p>
+              <p class="mb-0"><?php echo $row['content']; ?></p>
+              <p class="text-secondary mb-0"><?php echo $row['saved_at']; ?></p>
               <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
             </div>
           </div>

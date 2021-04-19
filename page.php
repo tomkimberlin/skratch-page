@@ -17,9 +17,14 @@ if (isset($_GET['id'])) {
       <?php if (isset($ViewPage)) {
         if ($ViewPage['status']) : ?>
           <?php foreach ($ViewPage['data'] as $row) : ?>
-            <div class="border rounded mb-3 p-3">
-              <p><?php echo $row['content']; ?></p>
-              <p class="text-secondary mb-0">Saved: <?php echo $row['saved_at']; ?></p>
+            <div class="border rounded mb-3">
+              <div class="bg-dark p-1">
+                <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
+              </div>
+              <div class="p-1">
+                <p class="mb-0"><?php echo $row['content']; ?></p>
+                <p class="text-secondary mb-0"><?php echo $row['saved_at']; ?></p>
+              </div>
             </div>
           <?php endforeach; ?>
         <?php endif;
