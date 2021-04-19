@@ -23,6 +23,7 @@ $Pages = $Dashboard->getPages();
               <p class="mb-0"><?php echo $row['content']; ?></p>
               <p class="text-secondary mb-0"><?php echo $row['saved_at']; ?></p>
               <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
+              <p class="mb-0"><a class="link-secondary" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a></p>
             </div>
           </div>
         </div>
