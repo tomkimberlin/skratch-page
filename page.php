@@ -24,6 +24,7 @@ if (isset($_GET['id'])) {
               <div class="p-1">
                 <p class="mb-0"><?php echo $row['content']; ?></p>
                 <p class="text-secondary mb-0"><?php echo $row['saved_at']; ?></p>
+                <p class="mb-0"><a class="link-secondary" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a></p>
               </div>
             </div>
           <?php endforeach; ?>
