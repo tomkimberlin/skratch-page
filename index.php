@@ -21,7 +21,7 @@ $active = $Index->active;
     </section>
     <section class="col-md">
       <h2>Fast and easy to use</h2>
-      <p class="text-secondary">Carefully designed to include what is necessary to be useful without becoming overly complicated. There are many ways to accomplish the same thing as SkratchPage but simplicity and ease of use is what makes Skratch.Page great.</p>
+      <p class="text-secondary">Carefully designed to include what is necessary to be useful without becoming overly complicated. There are many ways to accomplish the same thing as SkratchPage but simplicity and ease of use is what makes SkratchPage great.</p>
     </section>
   </div>
   <section>
