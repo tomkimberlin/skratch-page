@@ -15,23 +15,28 @@ $active = $Index->active;
     <?php endif; ?>
   </section>
   <div class="row">
-    <section class="col-md">
-      <h2>Access from any device</h2>
-      <p class="text-secondary">SkratchPage is accessible from any device with access to the internet via a web browser. PC, Mac, Chrome, Firefox, iPhone, Android, etc. No longer must you rely on having an app installed on your phone for sharing simple information between your devices.</p>
-    </section>
-    <section class="col-md">
-      <h2>Fast and easy to use</h2>
-      <p class="text-secondary">Carefully designed to include what is necessary to be useful without becoming overly complicated. There are many ways to accomplish the same thing as SkratchPage but simplicity and ease of use is what makes SkratchPage great.</p>
-    </section>
+    <h2>Access from any device</h2>
+    <p class="text-secondary">SkratchPage is accessible from any device with access to the internet via a web browser. PC, Mac, Chrome, Firefox, iPhone, Android, etc. No longer must you rely on having an app installed on your phone for sharing simple information between your devices.</p>
+    <h2>Fast and easy to use</h2>
+    <p class="text-secondary">Carefully designed to include what is necessary to be useful while avoiding becoming overly complicated. There are many ways to accomplish the same thing as SkratchPage but simplicity and ease of use is what makes SkratchPage great.</p>
   </div>
   <section>
     <h2>How does it work?</h2>
     <ol>
       <li><a class="link-secondary" href="register.php">Register</a> an account.</li>
-      <li><a class="link-secondary" href="register.php">Login</a> to your account and you will be redirected to your dashboard where you can create a new page.
+      <li><a class="link-secondary" href="register.php">Login</a> to your account and you will be redirected to your dashboard where you can create a new page:
         <img class="img-fluid my-2" src="assets/img/new-page.png" width="730" height="567"></li>
-      <li>Access your pages from anywhere at any time!</li>
     </ol>
+  </section>
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li>Create and save pages to your account and access them from any web browser on any device</li>
+      <li>View all pages in your dashboard</li>
+      <li>View individual pages</li>
+      <li>Delete pages</li>
+      <li>Search pages</li>
+    </ul>
   </section>
 </main>
 </body>

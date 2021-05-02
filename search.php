@@ -1,9 +1,9 @@
-<?php require_once('controller/dashboard-controller.php'); ?>
+<?php require_once('controller/search-controller.php'); ?>
 <?php
-$Dashboard = new Dashboard();
+$Search = new Search();
 $Response = [];
-$active = $Dashboard->active;
-$Pages = $Dashboard->getPages();
+$active = $Search->active;
+$Results = $Search->getResult();
 ?>
 <?php require('./nav.php'); ?>
 <main class="container py-3">
@@ -12,12 +12,12 @@ $Pages = $Dashboard->getPages();
   <p><a class="link-secondary" href="new-page.php">New page</a></p>
   <section class="row">
     <h2 class="mb-3">Pages</h2>
-    <?php if ($Pages['status']) : ?>
+    <?php if ($Results['status']) : ?>
       <form action="search.php" class="pb-3" method="POST">
         <label for="search">Search Pages</label>
         <input type="text" name="search" id="search">
       </form>
-      <?php foreach ($Pages['data'] as $row) : ?>
+      <?php foreach ($Results['data'] as $row) : ?>
         <div class="col-md">
           <div class="border rounded mb-3">
             <div class="bg-dark p-1">
@@ -37,15 +37,9 @@ $Pages = $Dashboard->getPages();
         <p>No pages founds.</p>
       </div>
     <?php endif; ?>
-  </section>
-  <section>
-    <?php if ($_SESSION['role'] === 'admin') : ?>
-      <h2>Recently created users</h2>
-      <?php $Users = $Dashboard->getRecentUsers(); ?>
-      <?php foreach ($Users['data'] as $row) : ?>
-        <p><?php echo $row['email']; ?></p>
-      <?php endforeach; ?>
-    <?php endif; ?>
+    <div>
+      <a class="link-secondary" href="dashboard.php">Return to Dashboard</a>
+    </div>
   </section>
 </main>
 </body>
