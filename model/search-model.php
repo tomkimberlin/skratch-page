@@ -19,8 +19,8 @@ class SearchModel extends db
     }
 
     if(isset($_POST['search'])) {
-      $this->query("SELECT * FROM `pages` WHERE `user_id` = (:user_id) AND `content` LIKE (:search) OR `title` LIKE (:search) ORDER BY `saved_at` DESC");
-      $this->bind('user_id', $_SESSION['id']);
+      $this->query("SELECT * FROM `pages` WHERE `user_id` = (:session_id) AND (`content` LIKE (:search) OR `title` LIKE (:search)) ORDER BY `saved_at` DESC");
+      $this->bind('session_id', $_SESSION['id']);
       $this->bind('search', "%".$_POST['search']."%");
       $this->execute();
       $Results = $this->fetchAll();
