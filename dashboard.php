@@ -8,7 +8,7 @@ $Pages = $Dashboard->getPages();
 <?php require('./nav.php'); ?>
 <main class="container py-3">
   <h1>Dashboard</h1>
-  <p><a class="btn btn-primary" href="new-page.php">New Page</a></p>
+  <p><a class="btn btn-primary mt-2" href="new-page.php">New Page</a></p>
   <section class="row">
     <h2 class="mb-3">Pages</h2>
     <?php if ($Pages['status']) : ?>
