@@ -3,13 +3,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="application-name" content="Skratch.Page">
+    <meta name="application-name" content="SkratchPage">
     <meta name="author" content="Tom Kimberlin">
     <meta name="theme-color" content="#212529">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skratch.Page | <?php if (!empty($active)) {
+    <title><?php if (!empty($active)) {
         echo ucfirst($active);
-      } ?></title>
+      } ?> | SkratchPage</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,14 +21,14 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.php">Skratch.Page</a>
+        <a class="navbar-brand" href="index.php">SkratchPage</a>
         <?php if (isset($_SESSION['auth_status'])) : ?>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarMenu">
             <div class="navbar-nav">
-              <a class="nav-link" href="logout.php">Logout</a>
+              <a class="nav-link" href="logout.php">Logout: <?php echo $_SESSION['email']; ?></a>
             </div>
           </div>
         <?php endif; ?>

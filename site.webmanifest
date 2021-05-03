@@ -1,6 +1,6 @@
 {
-    "name": "Skratch.Page",
-    "short_name": "Skratch.Page",
+    "name": "SkratchPage",
+    "short_name": "SkratchPage",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",

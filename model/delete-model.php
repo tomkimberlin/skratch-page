@@ -3,6 +3,11 @@ require_once('db.php');
 
 class DeleteModel extends db
 {
+  /**
+   * Deletes page from database
+   *
+   * @return bool[]|false[]
+   */
   public function delete(): array
   {
     $this->query("DELETE FROM `pages` WHERE `id` = :id");

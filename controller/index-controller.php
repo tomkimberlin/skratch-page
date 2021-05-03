@@ -5,10 +5,12 @@ require_once('controller.php');
 class Index extends Controller
 {
 
-  public string $active = 'index'; // For highlighting the active link
+  public string $active = 'home';
 
+  /**
+   * Index constructor.
+   */
   public function __construct()
   {
   }
-
 }

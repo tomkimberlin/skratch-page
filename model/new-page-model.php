@@ -4,6 +4,12 @@ require_once('db.php');
 class NewPageModel extends db
 {
 
+  /**
+   * Inserts page into database
+   *
+   * @param array $page
+   * @return bool[]|false[]
+   */
   public function createPage(array $page): array
   {
     $this->query("INSERT INTO `pages` (user_id, title, content) VALUES (:user_id, :title, :content)");

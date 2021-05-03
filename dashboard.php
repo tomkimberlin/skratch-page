@@ -14,7 +14,7 @@ $Pages = $Dashboard->getPages();
     <h2 class="mb-3">Pages</h2>
     <?php if ($Pages['status']) : ?>
       <form action="search.php" class="pb-3" method="POST">
-        <label for="search">Search Pages</label>
+        <label class="text-secondary" for="search">Search</label>
         <input type="text" name="search" id="search">
       </form>
       <?php foreach ($Pages['data'] as $row) : ?>
@@ -25,7 +25,11 @@ $Pages = $Dashboard->getPages();
             </div>
             <div class="p-1">
               <p class="mb-0"><?php echo $row['content']; ?></p>
-              <p class="text-secondary mb-0"><?php echo $row['saved_at']; ?></p>
+              <p class="text-secondary mb-0"><?php
+                $time = $row['saved_at'];
+                $formattedTime = date('m/d/y g:ia', strtotime($time));
+                echo $formattedTime;
+              ?></p>
               <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
               <p class="mb-0"><a class="link-secondary" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a></p>
             </div>

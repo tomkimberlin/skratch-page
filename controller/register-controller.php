@@ -6,9 +6,12 @@ require_once('./model/register-model.php');
 class Register extends Controller
 {
 
-  public string $active = 'Register'; // For highlighting the active link
+  public string $active = 'register';
   private RegisterModel $registerModel;
 
+  /**
+   * Register constructor.
+   */
   public function __construct()
   {
     // Check if user is logged in and redirect them to dashboard.php if they are
@@ -16,6 +19,12 @@ class Register extends Controller
     $this->registerModel = new RegisterModel();
   }
 
+  /**
+   * Takes user inputted credentials and initiates registration
+   *
+   * @param array $data
+   * @return bool[]|false[]|string[]
+   */
   public function register(array $data)
   {
     $email = stripcslashes(strip_tags($data['email']));
@@ -49,13 +58,13 @@ class Register extends Controller
       'password' => password_hash($password, PASSWORD_BCRYPT)
     );
 
-    // Create the user and store the response
+    // Try creating the user and store the response
     $Response = $this->registerModel->createUser($Payload);
 
     // Fetch the newly created user
     $Data = $this->registerModel->fetchUser($email)['data'];
 
-    // Destroy password
+    // Destroy password now that it is no longer needed
     unset($Data['password']);
 
     // Return error message if creating user is unsuccessful
@@ -64,7 +73,7 @@ class Register extends Controller
       return $Response;
     }
 
-    // Session variables
+    // Set session variables
     $_SESSION['data'] = $Data;
     $_SESSION['auth_status'] = true;
     $_SESSION['id'] = $Data['id'];

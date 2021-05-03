@@ -9,11 +9,13 @@ if (isset($_GET['id'])) {
     $user_id = $row['user_id'];
   }
 }
-if($user_id == $_SESSION['id']) {
-  $Delete = new Delete();
-  $Response = [];
-  $active = $Delete->active;
-  $Response = $Delete->deletePage();
+if (isset($user_id)) {
+  if($user_id == $_SESSION['id']) {
+    $Delete = new Delete();
+    $Response = [];
+    $active = $Delete->active;
+    $Response = $Delete->deletePage();
+  }
 }
 header("Location: dashboard.php");
 

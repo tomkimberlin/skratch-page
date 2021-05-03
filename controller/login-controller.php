@@ -6,9 +6,12 @@ require_once('./model/login-model.php');
 class Login extends Controller
 {
 
-  public string $active = 'login'; // For highlighting the active link
+  public string $active = 'login';
   private LoginModel $loginModel;
 
+  /**
+   * Login constructor.
+   */
   public function __construct()
   {
     // If logged in, set the header to dashboard.php
@@ -17,6 +20,12 @@ class Login extends Controller
     $this->loginModel = new LoginModel();
   }
 
+  /**
+   * Takes user inputted data and initiates login attempt
+   *
+   * @param array $data
+   * @return false[]
+   */
   public function login(array $data): array
   {
     $email = stripcslashes(strip_tags($data['email']));

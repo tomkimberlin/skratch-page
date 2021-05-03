@@ -3,6 +3,11 @@ require_once('db.php');
 
 class PageModel extends db
 {
+  /**
+   * Fetches page from database
+   *
+   * @return array
+   */
   public function fetchPage(): array
   {
     $this->query("SELECT * FROM `pages` WHERE `id` = :id");
