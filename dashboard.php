@@ -43,7 +43,7 @@ $Pages = $Dashboard->getPages();
     <?php endif; ?>
   </section>
   <section>
-    <?php if ($_SESSION['role'] === 'admin') : ?>
+    <?php if ($_SESSION['role'] === '1') : ?>
       <h2>Recently Created Users</h2>
       <?php $Users = $Dashboard->getRecentUsers(); ?>
       <?php foreach ($Users['data'] as $row) : ?>

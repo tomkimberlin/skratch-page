@@ -40,18 +40,7 @@ class Login extends Controller
         $_SESSION['auth_status'] = true;
         $_SESSION['id'] = $EmailRecords['data']['id'];
         $_SESSION['email'] = $EmailRecords['data']['email'];
-
-        if ($EmailRecords['data']['role'] === '1') {
-          $_SESSION['role'] = 'admin';
-        }
-
-        if ($EmailRecords['data']['role'] === '2') {
-          $_SESSION['role'] = 'user';
-        }
-
-        if ($EmailRecords['data']['role'] === '3') {
-          $_SESSION['role'] = 'vip';
-        }
+        $_SESSION['role'] = $EmailRecords['data']['role'];
 
         header("Location: dashboard.php");
       }
