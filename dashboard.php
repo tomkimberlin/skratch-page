@@ -8,8 +8,7 @@ $Pages = $Dashboard->getPages();
 <?php require('./nav.php'); ?>
 <main class="container py-3">
   <h1>Dashboard</h1>
-  <p class="lead text-secondary">Logged in as: <?php echo $_SESSION['email']; ?></p>
-  <p><a class="link-secondary" href="new-page.php">New page</a></p>
+  <p><a class="btn btn-primary" href="new-page.php">New Page</a></p>
   <section class="row">
     <h2 class="mb-3">Pages</h2>
     <?php if ($Pages['status']) : ?>
@@ -30,8 +29,8 @@ $Pages = $Dashboard->getPages();
                 $formattedTime = date('m/d/y g:ia', strtotime($time));
                 echo $formattedTime;
                 ?></p>
-              <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
-              <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
+              <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
+              <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
               </p>
             </div>
           </div>
@@ -45,7 +44,7 @@ $Pages = $Dashboard->getPages();
   </section>
   <section>
     <?php if ($_SESSION['role'] === 'admin') : ?>
-      <h2>Recently created users</h2>
+      <h2>Recently Created Users</h2>
       <?php $Users = $Dashboard->getRecentUsers(); ?>
       <?php foreach ($Users['data'] as $row) : ?>
         <p><?php echo $row['email']; ?></p>

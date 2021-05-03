@@ -6,7 +6,7 @@ $Results = $Search->getResult();
 ?>
 <?php require('./nav.php'); ?>
 <main class="container py-3">
-  <h1>Results</h1>
+  <h1>Search Results</h1>
   <section>
     <?php if ($Results['status']) : ?>
       <?php foreach ($Results['data'] as $row) : ?>
@@ -22,9 +22,9 @@ $Results = $Search->getResult();
                 $formattedTime = date('m/d/y g:ia', strtotime($time));
                 echo $formattedTime;
                 ?></p>
-              <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
+              <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
               <p class="mb-0">
-                <a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
+                <a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
               </p>
             </div>
           </div>

@@ -29,7 +29,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
       <?php endif; ?>
     </div>
     <div>
-      <button class="btn btn-secondary" type="submit">Register</button>
+      <button class="btn btn-primary" type="submit">Register</button>
     </div>
   </form>
 </main>

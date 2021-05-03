@@ -29,21 +29,21 @@ if (isset($_GET['id'])) {
                   $formattedTime = date('m/d/y g:ia', strtotime($time));
                   echo $formattedTime;
                   ?></p>
-                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
+                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
                 </p>
               </div>
             </div>
           <?php endforeach; ?>
         <?php endif;
       } ?>
-    <?php else: ?>
+    <?php else: // If user doesn't have permission to view page ?>
       <div class="alert alert-danger" role="alert">
-        <span>You do not have permission to view this page.</span>
+        <span>Unable to view page.</span>
       </div>
     <?php endif; ?>
-  <?php else: ?>
+  <?php else: // If page doesn't exist ?>
     <div class="alert alert-danger" role="alert">
-      <span>Page does not exist.</span>
+      <span>Unable to view page.</span>
     </div>
   <?php endif; ?>
   <a class="link-secondary" href="dashboard.php">Return to Dashboard</a>
