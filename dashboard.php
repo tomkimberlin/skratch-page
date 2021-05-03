@@ -19,7 +19,7 @@ $Pages = $Dashboard->getPages();
       </form>
       <?php foreach ($Pages['data'] as $row) : ?>
         <div class="col-md">
-          <div class="border rounded mb-3">
+          <div class="border mb-3">
             <div class="bg-dark p-1">
               <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
             </div>
@@ -29,9 +29,10 @@ $Pages = $Dashboard->getPages();
                 $time = $row['saved_at'];
                 $formattedTime = date('m/d/y g:ia', strtotime($time));
                 echo $formattedTime;
-              ?></p>
+                ?></p>
               <p class="mb-0"><a class="link-secondary" href="page.php?id=<?php echo $row['id']; ?>">View page</a></p>
-              <p class="mb-0"><a class="link-secondary" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a></p>
+              <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
+              </p>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
   }
 }
 if (isset($user_id)) {
-  if($user_id == $_SESSION['id']) {
+  if ($user_id == $_SESSION['id']) {
     $Delete = new Delete();
     $Response = [];
     $active = $Delete->active;

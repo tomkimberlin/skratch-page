@@ -18,7 +18,7 @@ if (isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <div class="mb-3">
       <label for="inputEmail" class="form-label">Email</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" <?php if (isset($_POST['email'])) : ?>value="<?php echo $_POST['email'];?>"<?php endif; ?>required autofocus>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" <?php if (isset($_POST['email'])) : ?>value="<?php echo $_POST['email']; ?>" <?php endif; ?>required autofocus>
     </div>
     <div class="mb-3">
       <label for="inputPassword" class="form-label">Password</label>

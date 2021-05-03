@@ -5,6 +5,7 @@ $active = $Page->active;
 if (isset($_GET['id'])) {
   $ViewPage = $Page->getPage();
   foreach ($ViewPage['data'] as $row) {
+    // Store user_id for comparing to session_id
     $id = $row['user_id'];
   }
 }
@@ -28,7 +29,7 @@ if (isset($_GET['id'])) {
                   $formattedTime = date('m/d/y g:ia', strtotime($time));
                   echo $formattedTime;
                   ?></p>
-                <p class="mb-0"><a class="link-secondary" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
+                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete page</a>
                 </p>
               </div>
             </div>
