@@ -22,8 +22,8 @@ $active = $Index->active;
       <p class="lead">Give your page a title, some content, and hit the save button. It's that simple.</p>
     </section>
     <section class="my-3">
-      <h3 class="h4">Access pages anywhere</h3>
-      <p class="lead">SkratchPage is web-based meaning it is accessible on any device with an internet connection and a web browser.</p>
+      <h3 class="h4">Completely web-based</h3>
+      <p class="lead">Nothing to install, just open SkratchPage on any device with an internet connection and a web browser.</p>
     </section>
     <section class="my-3">
       <h3 class="h4">Search saved pages</h3>
