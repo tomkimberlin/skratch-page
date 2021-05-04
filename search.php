@@ -12,20 +12,20 @@ $Results = $Search->getResult();
       <?php foreach ($Results['data'] as $row) : ?>
         <div class="col-md">
           <div class="border mb-3">
-            <div class="bg-dark p-1">
+            <div class="bg-dark p-1 px-2">
               <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
             </div>
-            <div class="p-1">
+            <div class="p-1 px-2">
               <p class="mb-0"><?php echo $row['content']; ?></p>
               <p class="text-secondary mb-0"><?php
                 $time = $row['saved_at'];
                 $formattedTime = date('m/d/y g:ia', strtotime($time));
                 echo $formattedTime;
                 ?></p>
-              <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
-              <p class="mb-0">
-                <a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
-              </p>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
+                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a></p>
+              </div>
             </div>
           </div>
         </div>

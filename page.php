@@ -19,10 +19,10 @@ if (isset($_GET['id'])) {
         if ($ViewPage['status']) : ?>
           <?php foreach ($ViewPage['data'] as $row) : ?>
             <div class="border rounded mb-3">
-              <div class="bg-dark p-1">
+              <div class="bg-dark p-1 px-2">
                 <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
               </div>
-              <div class="p-1">
+              <div class="p-1 px-2">
                 <p class="mb-0"><?php echo $row['content']; ?></p>
                 <p class="text-secondary mb-0"><?php
                   $time = $row['saved_at'];
