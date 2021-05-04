@@ -7,10 +7,10 @@ $Results = $Search->getResult();
 <?php require('./nav.php'); ?>
 <main class="container py-3">
   <h1>Search Results</h1>
-  <section>
+  <section class="row">
     <?php if ($Results['status']) : ?>
       <?php foreach ($Results['data'] as $row) : ?>
-        <div class="col-md">
+        <div class="col-md" style="max-width: 480px;">
           <div class="border mb-3">
             <div class="bg-dark p-1 px-2">
               <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
@@ -24,7 +24,8 @@ $Results = $Search->getResult();
                 ?></p>
               <div class="d-flex justify-content-between">
                 <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
-                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a></p>
+                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
+                </p>
               </div>
             </div>
           </div>

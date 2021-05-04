@@ -9,22 +9,24 @@ $Pages = $Dashboard->getPages();
 <main class="container py-3">
   <h1>Dashboard</h1>
   <section class="row">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center col-12">
       <div>
-        <p><a class="btn btn-primary" href="new-page.php">New Page</a></p>
+        <p><a class="btn btn-primary" href="new-page.php">New&nbsp;Page</a></p>
       </div>
       <?php if ($Pages['status']) : ?>
-      <div style="padding-left: 1rem;">
-        <form action="search.php" class="pb-3" method="POST">
-          <label for="search">Search</label>
-          <input type="text" name="search" id="search">
-        </form>
-      </div>
+        <div>
+          <form action="search.php" class="pb-3" method="POST">
+            <div class="d-flex align-items-center">
+              <label class="form-label px-3 m-auto" for="search">Search</label>
+              <input class="form-control" type="text" name="search" id="search">
+            </div>
+          </form>
+        </div>
       <?php endif; ?>
     </div>
     <?php if ($Pages['status']) : ?>
       <?php foreach ($Pages['data'] as $row) : ?>
-        <div class="col-md">
+        <div class="col-md" style="max-width: 480px;">
           <div class="border mb-3">
             <div class="bg-dark p-1 px-2">
               <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
@@ -38,7 +40,8 @@ $Pages = $Dashboard->getPages();
                 ?></p>
               <div class="d-flex justify-content-between">
                 <p class="mb-0"><a class="link-primary" href="page.php?id=<?php echo $row['id']; ?>">View Page</a></p>
-                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a></p>
+                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
+                </p>
               </div>
             </div>
           </div>

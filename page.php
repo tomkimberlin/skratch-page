@@ -18,19 +18,21 @@ if (isset($_GET['id'])) {
       <?php if (isset($ViewPage)) {
         if ($ViewPage['status']) : ?>
           <?php foreach ($ViewPage['data'] as $row) : ?>
-            <div class="border rounded mb-3">
+            <div class="border mb-3" style="max-width: 480px;">
               <div class="bg-dark p-1 px-2">
                 <p class="fw-bold m-0 text-light"><?php echo $row['title']; ?></p>
               </div>
-              <div class="p-1 px-2">
+              <div class="p-2 px-2">
                 <p class="mb-0"><?php echo $row['content']; ?></p>
-                <p class="text-secondary mb-0"><?php
-                  $time = $row['saved_at'];
-                  $formattedTime = date('m/d/y g:ia', strtotime($time));
-                  echo $formattedTime;
-                  ?></p>
-                <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
-                </p>
+                <div class="d-flex justify-content-between">
+                  <p class="text-secondary mb-0"><?php
+                    $time = $row['saved_at'];
+                    $formattedTime = date('m/d/y g:ia', strtotime($time));
+                    echo $formattedTime;
+                    ?></p>
+                  <p class="mb-0"><a class="link-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete Page</a>
+                  </p>
+                </div>
               </div>
             </div>
           <?php endforeach; ?>
@@ -46,7 +48,7 @@ if (isset($_GET['id'])) {
       <span>Unable to view page.</span>
     </div>
   <?php endif; ?>
-  <a class="link-secondary" href="dashboard.php">Return to Dashboard</a>
+  <a class="link-secondary" href="dashboard.php"> Return to Dashboard</a>
 </main>
 </body>
 </html>
